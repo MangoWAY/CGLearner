@@ -78,3 +78,10 @@ class Shader:
             gl.glDeleteShader(shader_id)
         gl.glUseProgram(0)
         gl.glDeleteProgram(self.program_id)
+
+    def get_uniform_loc(self,name):
+        return gl.glGetUniformLocation(self.program_id, name)
+
+    def set_mat4(self, name: str, value):
+        loc_id = self.get_uniform_loc(name)
+        gl.glUniformMatrix4fv(loc_id, 1, gl.GL_FALSE, value)

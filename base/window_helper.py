@@ -1,8 +1,6 @@
 import glfw, logging, sys
 from OpenGL import GL as gl
-
 log = logging.getLogger(__name__)
-
 class Window:
 
     class Config:
