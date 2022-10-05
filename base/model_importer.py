@@ -14,7 +14,8 @@ class ModelImporter:
         mmeshes = []
         for mesh in scene.meshes:
             mmesh = Mesh()
-            mmesh.vertices = np.reshape(np.copy(mesh.vertices), (1,-1)).squeeze(0) /200
+            mmesh.vertices = np.reshape(np.copy(mesh.vertices), (1,-1)).squeeze(0)
+            print(mmesh.vertices)
             mmesh.normals = np.reshape(np.copy(mesh.normals),(1,-1)).squeeze(0)
             mmesh.subMeshes = []
             mmesh.subMeshes.append(SubMesh(np.reshape(np.copy(mesh.faces), (1,-1)).squeeze(0)))

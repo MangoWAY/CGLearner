@@ -16,7 +16,7 @@ mshader.use_program()
 
 trans = transform.Transform()
 trans.localPosition = [0,0,0]
-trans.localScale = [1,1,1]
+trans.localScale = [0.005,0.005,0.005]
 trans.localEulerAngle = [0,10,0]
 model = trans.localMatrix()
 
@@ -48,13 +48,13 @@ desp1.offset = ctypes.c_void_p(12)
 desp1.need_nor = False
 desp1.comp_type = gl.GL_FLOAT
 
-desp1 = VertexAttribDesp()
-desp1.attr_id = 2
-desp1.comp_count = 3
-desp1.stride = 9 * 4
-desp1.offset = ctypes.c_void_p(24)
-desp1.need_nor = False
-desp1.comp_type = gl.GL_FLOAT
+desp2 = VertexAttribDesp()
+desp2.attr_id = 2
+desp2.comp_count = 3
+desp2.stride = 9 * 4
+desp2.offset = ctypes.c_void_p(24)
+desp2.need_nor = False
+desp2.comp_type = gl.GL_FLOAT
 
 importer = ModelImporter()
 
@@ -67,7 +67,7 @@ for i in range(len(meshes[0].vertices)):
         vert.extend([random.random(),random.random(),random.random()])
 inde = meshes[0].subMeshes[0].indices
 
-data.build_data([desp,desp1],vert,inde)
+data.build_data([desp,desp1,desp2],vert,inde)
 data.use()
 gl.glEnable(gl.GL_DEPTH_TEST)
 
