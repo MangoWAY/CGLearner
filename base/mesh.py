@@ -8,3 +8,4 @@ class Mesh:
         self.vertices = []
         self.normals = []
         self.subMeshes = []
+        self.uvs = []
